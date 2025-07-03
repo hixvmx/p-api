@@ -38,7 +38,7 @@ class ProductController extends Controller
             $query->where('price', '<=', $request->max_price);
         }
 
-        $products = $query->with('variations.options')->paginate(10);
+        $products = $query->with('variations.options')->paginate(25);
 
         return ProductResource::collection($products);
     }
